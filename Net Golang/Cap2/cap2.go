@@ -12,7 +12,7 @@ var d bool
 
 type hotdog int
 
-var hot hotdog = 101
+var hot hotdog = 105
 
 func main() {
 	//fmt retorna numero de bytes(tamanho de todo o print) e algum erro se acontecer....
