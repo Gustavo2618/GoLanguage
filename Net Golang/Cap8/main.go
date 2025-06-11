@@ -6,6 +6,7 @@ func main() {
 	exemplo01()
 	exemplo02()
 	exemplo03()
+	exemplo04()
 }
 
 // video59 array
@@ -56,4 +57,33 @@ func exemplo03() {
 		fmt.Printf("Um dos valores desse slice é %s. \n", valor)
 	}
 	fmt.Println()
+}
+
+//video62
+//usando slices, pegando fatias e comando len
+//exercicio
+func exemplo04() {
+	//sabores[:], sabores[a:],sabores[:b] sabores[a:b]
+	sabores := []string{"pepperoni", "mussarela", "portuguesa", "calabresa", "marguerita", "quatro queijos"}
+	fatia := sabores[0:2]
+	fmt.Println(fatia)
+	fatia1 := sabores[3:len(sabores)]
+	fmt.Println(fatia1)
+	fatia2 := sabores[1:3]
+	fmt.Println(fatia2)
+
+	//usando len
+	for i := 0; i < len(sabores); i++ {
+		fmt.Println(sabores[i])
+	}
+	//Println
+	fmt.Println(sabores[:])
+
+	sabores = append(sabores[:2], sabores[3:]...)
+	fmt.Println(sabores)
+}
+
+//video63
+func exemplo05() {
+
 }
