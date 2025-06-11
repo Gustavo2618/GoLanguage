@@ -25,9 +25,9 @@ func exemplo01() {
 
 //video60 slices
 func exemplo02() {
-	array := [5]int{1, 2, 3, 4, 5}
+	array := [6]int{0, 1, 2, 3, 4, 5}
 	fmt.Println("array: ", array)
-	slice := []int{1, 2, 3, 4, 5}
+	slice := []int{6, 7, 8, 9}
 	fmt.Println("slice: ", slice)
 	// array2 := append(array, 6)
 	slice2 := append(slice, array[0])
@@ -36,6 +36,24 @@ func exemplo02() {
 }
 
 //video61
+//função range percorre todo o slice
 func exemplo03() {
-
+	slice := []string{"banana", "maça", "jaca", "Pera", "morango", "Laranja", "Pêssego"}
+	for indice, valor := range slice {
+		fmt.Println("No indice", indice, "temos o valor:", valor)
+	}
+	fmt.Println()
+	//possivel erro de tamanho por conta do tamanho do slice
+	// slice[7] = "melancia"
+	//ignorando valores com _ ou indice ou valor
+	slice = append(slice, "melancia")
+	for indice, _ := range slice {
+		fmt.Println("No indice", indice, "elementos")
+	}
+	fmt.Println()
+	slice = append(slice, "melancia")
+	for _, valor := range slice {
+		fmt.Printf("Um dos valores desse slice é %s. \n", valor)
+	}
+	fmt.Println()
 }
