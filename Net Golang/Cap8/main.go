@@ -7,6 +7,8 @@ func main() {
 	exemplo02()
 	exemplo03()
 	exemplo04()
+	exemplo05()
+	exemplo06()
 }
 
 // video59 array
@@ -84,6 +86,36 @@ func exemplo04() {
 }
 
 //video63
+//adicionando slices e os enumeration ...
 func exemplo05() {
+	vec1 := []int{1, 2, 3, 4, 5, 6}
+	vec2 := []int{7, 8, 9, 10, 11, 12}
+	fmt.Println(vec1)
+	vec3 := append(vec1, 0, 2, 7, 9, 10)
+	fmt.Println(vec3)
+	vec3 = append(vec3, vec2...)
+	fmt.Println(vec3)
 
+}
+
+//video 64
+//usando slice com make
+func exemplo06() {
+	slice := make([]int, 5, 10)
+	slice[0], slice[1], slice[2], slice[3] = 1, 2, 3, 4
+	slice[4] = 10
+	//causa erro por conta do tamanho do slice
+	//slice[5] = 50
+	//para aumentar o slice usar append
+	slice = append(slice, 50)
+	slice = append(slice, 51)
+	slice = append(slice, 52)
+	slice = append(slice, 53)
+	slice = append(slice, 54)
+	fmt.Println("slice: ", slice, len(slice), cap(slice))
+	//aumentando capacidade do slice
+	slice = append(slice, 55)
+	fmt.Println("slice: ", slice, len(slice), cap(slice))
+	slice = append(slice, 56)
+	fmt.Println("slice: ", slice, len(slice), cap(slice))
 }
