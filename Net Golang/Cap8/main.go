@@ -9,6 +9,7 @@ func main() {
 	exemplo04()
 	exemplo05()
 	exemplo06()
+	exemplo07()
 }
 
 // video59 array
@@ -118,4 +119,56 @@ func exemplo06() {
 	fmt.Println("slice: ", slice, len(slice), cap(slice))
 	slice = append(slice, 56)
 	fmt.Println("slice: ", slice, len(slice), cap(slice))
+}
+
+//video 65
+//slices multidimencionais matrizes
+func exemplo07() {
+	ss := [][]int{
+		[]int{1, 2, 3},
+		[]int{4, 5, 6},
+		[]int{7, 8, 9},
+	}
+	fmt.Println("slice de slice: ", ss)
+	fmt.Println("linha slice: ", ss[1])
+	fmt.Println("item de ss: ", ss[2][1])
+
+	for indice := range ss {
+		for indece2 := range ss {
+			fmt.Println("item de ss: ", ss[indice][indece2])
+		}
+	}
+
+	ss1 := [][][][]int{
+		[][][]int{
+			[][]int{
+				[]int{1, 2, 3, 4, 5, 6},
+			},
+			[][]int{
+				[]int{20, 10, 30, 40, 50},
+			},
+		},
+		[][][]int{
+			[][]int{
+				[]int{2, 4, 6, 8, 10},
+			},
+			[][]int{
+				[]int{3},
+			},
+		},
+	}
+	fmt.Println(ss1[1])
+	fmt.Println(ss1[1][0])
+	fmt.Println(ss1[1][0][0])
+	fmt.Println(ss1[1][0][0][2])
+
+	for indices1 := range ss1 {
+		for indeces2 := range ss1[indices1] {
+			for indices3 := range ss1[indices1][indeces2] {
+				for indeces4 := range ss1[indices1][indeces2][indices3] {
+					fmt.Println("item de ss1: ", ss1[indices1][indeces2][indices3][indeces4])
+				}
+			}
+		}
+	}
 }
