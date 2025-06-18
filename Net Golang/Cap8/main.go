@@ -10,6 +10,7 @@ func main() {
 	exemplo05()
 	exemplo06()
 	exemplo07()
+	exemplo08()
 }
 
 // video59 array
@@ -171,4 +172,32 @@ func exemplo07() {
 			}
 		}
 	}
+}
+
+//video 66
+//cuidado ao usar append com slice reutilizar as variaveis de forma inteligente
+func exemplo08() {
+	//codigo com erro na v slice
+	// slice1 := make([]int, 5, 10)
+	// slice1[0], slice1[1], slice1[2], slice1[3] = 1, 2, 3, 4
+	// slice1[4] = 10
+	// fmt.Println("slice1: ", slice1)
+	// slice := []int{20, 21, 22, 23, 24}
+	// fmt.Println("slice: ", slice)
+	// slice2 := append(slice[:2], slice1[4:]...)
+
+	// fmt.Println("slice2: ", slice2)
+	// fmt.Println("slice1: ", slice1)
+	// fmt.Println("slice: ", slice)
+
+	slice1 := make([]int, 5, 10)
+	slice1[0], slice1[1], slice1[2], slice1[3] = 1, 2, 3, 4
+	slice1[4] = 10
+	fmt.Println("slice1: ", slice1)
+	slice := []int{20, 21, 22, 23, 24}
+	fmt.Println("slice: ", slice)
+	slice = append(slice[:2], slice1[4:]...)
+	fmt.Println("slice1: ", slice1)
+	fmt.Println("slice: ", slice)
+
 }
