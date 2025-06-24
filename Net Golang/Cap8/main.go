@@ -11,6 +11,8 @@ func main() {
 	exemplo06()
 	exemplo07()
 	exemplo08()
+	exemplo09()
+	exemplo10()
 }
 
 // video59 array
@@ -200,4 +202,58 @@ func exemplo08() {
 	fmt.Println("slice1: ", slice1)
 	fmt.Println("slice: ", slice)
 
+}
+
+//video 67
+//maps
+func exemplo09() {
+	amigos := map[string]int{
+		"alfredo": 123,
+		"joao":    456,
+	}
+	fmt.Println(amigos)
+	fmt.Println(amigos["joao"])
+	amigos["pateta"] = 5555
+
+	fmt.Println(amigos)
+	fmt.Println(amigos["pateta"])
+	//valor jaquin nao existe no mapa ou o numero dele é zero?
+	fmt.Println(amigos["jaquin"])
+
+	//verificando valores no map ok false então fantasma nao existe no mapa
+	teste, ok := amigos["fantasma"]
+	fmt.Println(teste, ok)
+
+	if teste1, ok1 := amigos["jurandir"]; !ok1 {
+		fmt.Println("não existe ")
+	} else {
+		fmt.Println(teste1, ok1)
+	}
+
+	if teste2, ok2 := amigos["joao"]; !ok2 {
+		fmt.Println("não existe")
+	} else {
+		fmt.Println(teste2, ok2)
+	}
+
+}
+
+//video 68
+//percorrendo mapas e deletando valor deles
+func exemplo10() {
+	mapas := map[int]string{
+		123: "muito legal",
+		98:  "menos legal",
+		983: "teste para legal",
+		18:  "idade de ir para festa",
+	}
+
+	fmt.Println(mapas)
+
+	for key, valor := range mapas {
+		fmt.Println(key, valor)
+	}
+
+	delete(mapas, 983)
+	fmt.Println(mapas)
 }
