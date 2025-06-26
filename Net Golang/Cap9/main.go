@@ -10,6 +10,8 @@ func main() {
 	exemplo04()
 	exemplo05()
 	exemplo06()
+	exemplo07()
+	exemplo08()
 
 }
 
@@ -93,16 +95,86 @@ func exemplo06() {
 }
 
 //video 75
+//slice de slice
 func exemplo07() {
+	ss := [][]string{
+		[]string{"Ana"}, []string{"Paty"}, []string{"Nadadora"},
+		[]string{"Luiz"}, []string{"Gustavo"}, []string{"Programador"},
+		[]string{"Maria"}, []string{"Elza"}, []string{"Vendedora"},
+		[]string{"Wilson", "Monteiro", "Jardineiro"},
+		[]string{"Nizinha", "Monteiro", "Cuidadora"},
+		[]string{"Bruna", "____", "Enfermeira"},
+	}
 
+	fmt.Println(ss)
+	for _, v := range ss {
+		for _, item := range v {
+			fmt.Println("\t", item)
+		}
+	}
 }
 
 func exemplo08() {
+	mapa := map[string]string{
+		"Paty":     "Nadadora",
+		"Gustavo":  "Programador",
+		"Eliaquim": "Revoltado",
+		"Elza":     "Vendedora",
+		"Icaro":    "Pagador de Imposto",
+		"Felipe":   "Sonegador de Imposto",
+	}
 
-}
-func exemplo09() {
+	fmt.Println(mapa)
+	for nome, valor := range mapa {
+		fmt.Println(nome, valor)
+	}
 
-}
-func exemplo10() {
+	mapa1 := map[string][]string{
+		"Paty": []string{
+			"Florzinha",
+			"Lindinha",
+			"Nadadora",
+			"Estudante",
+			"Sapequinha",
+			"Safadinha",
+			"Gulosinha",
+		},
+		"Gustavo": []string{
+			"Nadador",
+			"Estudantee",
+			"Jogador",
+			"Ruim",
+			"Mofi",
+			"Politico",
+		},
+		"Icaro": []string{
+			"Muito ruim",
+			"Sonegador de imposto",
+			"Pagador de Imposto",
+			"Chapeiro",
+			"Doceiro",
+			"Vendedoor",
+			"Garçom",
+			"Entregador",
+		},
+	}
+	fmt.Println(mapa1)
 
+	for nome, hobbys := range mapa1 {
+		fmt.Println(nome, hobbys)
+	}
+	for teste, teste1 := range mapa1 {
+		fmt.Println(teste)
+		for i, k := range teste1 {
+			fmt.Println("\t", i, "-", k)
+		}
+	}
+	delete(mapa1, "Paty")
+	for teste, teste1 := range mapa1 {
+		fmt.Println(teste)
+		for i, k := range teste1 {
+			fmt.Println("\t", i, "-", k)
+		}
+	}
 }
+
