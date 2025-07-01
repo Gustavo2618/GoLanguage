@@ -59,10 +59,51 @@ func exemplo02() {
 }
 
 //video 80
-func exemplo03() {
-
+//structs embutidos
+type Pessoa struct {
+	nome  string
+	idade int
 }
+type Profissional struct {
+	pessoa  Pessoa
+	titulo  string
+	salario int
+}
+
+func exemplo03() {
+	gustavo := Pessoa{"Gustavo", 33}
+	profissaoGustavo := Profissional{gustavo, "Bacharel em Computação", 2150}
+
+	fmt.Println(profissaoGustavo)
+}
+
+type Funcionario struct {
+	pessoa Pessoa
+	cargo  string
+}
+
+func (f Funcionario) Exibir() {
+	fmt.Println("Pessoa:", f.pessoa)
+	fmt.Println("Cargo:", f.cargo)
+}
+
+type Gerente struct {
+	funcionario  Funcionario
+	departamento string
+}
+
+func (g Gerente) Exibir() {
+	fmt.Println("Gerente:", g.funcionario)
+	fmt.Println("Cargo:", g.departamento)
+}
+
 func exemplo04() {
+	gustavo := Pessoa{nome: "Gustavo", idade: 33}
+	funcGustavo := Funcionario{gustavo, "Desenvolvedor Junior"}
+	gerenteGustavo := Gerente{funcGustavo, "Departamendo HP"}
+
+	fmt.Println("Exibir Funcionario:", funcGustavo)
+	fmt.Println("Exibir Gerente:", gerenteGustavo)
 
 }
 func exemplo05() {
