@@ -7,10 +7,7 @@ func main() {
 	exemplo02()
 	exemplo03()
 	exemplo04()
-	exemplo05()
-	exemplo06()
-	exemplo07()
-	exemplo08()
+
 }
 
 //video 79
@@ -104,17 +101,5 @@ func exemplo04() {
 
 	fmt.Println("Exibir Funcionario:", funcGustavo)
 	fmt.Println("Exibir Gerente:", gerenteGustavo)
-
-}
-func exemplo05() {
-
-}
-func exemplo06() {
-
-}
-func exemplo07() {
-
-}
-func exemplo08() {
 
 }

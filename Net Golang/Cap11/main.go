@@ -7,8 +7,7 @@ func main() {
 	exemplo02()
 	exemplo03()
 	exemplo04()
-	exemplo05()
-	exemplo06()
+
 }
 
 // video83
@@ -46,15 +45,50 @@ func exemplo02() {
 	}
 
 }
+
+type veiculo struct {
+	portas int
+	cor    string
+}
+type sedan struct {
+	veiculo    veiculo
+	modeloLuxo bool
+}
+type caminhonete struct {
+	veiculo           veiculo
+	tracaoQuatroRodas bool
+}
+
+//video 85
 func exemplo03() {
+	veiculo1 := veiculo{4, "Vermelho"}
+	veiculo2 := veiculo{4, "Branco"}
 
+	sedan := sedan{veiculo1, true}
+	caminhonete := caminhonete{veiculo2, true}
+
+	fmt.Println("Meu sedan:", sedan)
+	if sedan.modeloLuxo {
+		fmt.Println("Meu sedan é um veículo de luxo!")
+	}
+	fmt.Print("Minha caminhonete:", caminhonete, "A cor da caminhonete é:", caminhonete.veiculo.cor, "\n")
+	if caminhonete.tracaoQuatroRodas {
+		fmt.Println("Minha caminhonete tem quatro Portas")
+	}
 }
+
+//video86
 func exemplo04() {
+	anonimo := struct {
+		mapa  map[string]string
+		slice []int
+	}{
+		mapa: map[string]string{
+			"teste":  "teste1",
+			"teste2": "teste3",
+		},
+		slice: []int{1, 2, 3, 4, 5, 6},
+	}
 
-}
-func exemplo05() {
-
-}
-func exemplo06() {
-
+	fmt.Println(anonimo)
 }
