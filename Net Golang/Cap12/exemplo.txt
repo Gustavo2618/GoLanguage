@@ -1,0 +1,1 @@
+Linha 1: Olá Mundo Linha 2: Aprendendo Go Linha 3: Testando defer

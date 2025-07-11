@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 
@@ -30,11 +34,53 @@ func exemplo02() {
 
 	fmt.Println(total1)
 }
+
+// video 89
 func exemplo03() {
+	defer fmt.Println("teste 1")
+	fmt.Println("2")
+	fmt.Println("3")
+	defer fmt.Println("4")
+	defer fmt.Println("5")
 
 }
-func exemplo04() {
+func EscrevendoArquivo() {
+	arquivo, err := os.Create("exemplo.txt")
+	if err != nil {
+		fmt.Println("Erro ao criar arquivo", err)
+		return
+	}
 
+	defer arquivo.Close()
+
+	conteudo := `Linha 1: Olá Mundo Linha 2: Aprendendo Go Linha 3: Testando defer`
+	_, err = arquivo.WriteString(conteudo)
+	if err != nil {
+		fmt.Println("Erro ao escrever no arquivo", err)
+	}
+}
+
+func LerArquivo() {
+	arquivo, err := os.Open("exemplo.txt")
+	if err != nil {
+		fmt.Println("Erro ao abrir o arquivo", err)
+		return
+	}
+	defer arquivo.Close()
+
+	scanner := bufio.NewScanner(arquivo)
+	for scanner.Scan() {
+		linha := scanner.Text()
+		fmt.Println(linha)
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Erro durante a leitura do arquivo")
+	}
+}
+func exemplo04() {
+	EscrevendoArquivo()
+	LerArquivo()
 }
 func exemplo05() {
 
