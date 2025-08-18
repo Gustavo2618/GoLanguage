@@ -83,6 +83,8 @@ func LerArquivo() {
 		fmt.Println("Erro durante a leitura do arquivo")
 	}
 }
+
+// video 90
 func exemplo04() {
 	EscrevendoArquivo()
 	LerArquivo()
@@ -119,7 +121,7 @@ func serhumano(g gente) {
 	g.oibomdia()
 }
 
-// polimorfismo e interfaces em go
+// polimorfismo e interfaces em go video 91
 func exemplo05() {
 	mrpredio := dentista{
 		pessoa:         pessoa{"mrDente", "da silva", 50},
@@ -139,7 +141,7 @@ func exemplo05() {
 
 }
 
-// funcoes anonimas
+// funcoes anonimas video 92
 func exemplo06() {
 
 	x := 387
@@ -149,7 +151,7 @@ func exemplo06() {
 	}(x)
 }
 
-// funções como expressão
+// funções como expressão video 93
 func exemplo07() {
 	x := 387
 	y := func(x int) int {
@@ -166,7 +168,7 @@ func retornaumafunção() func(int) int {
 	}
 }
 
-// função que retorna função
+// função que retorna função video 94
 func exemplo08() {
 	x := retornaumafunção()
 
@@ -204,7 +206,7 @@ func somenteImpares(f func(x ...int) int, y ...int) int {
 	return total
 }
 
-// callbacks
+// callbacks video 95
 func exemplo09() {
 	t := somentePares(soma, []int{50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60}...)
 	fmt.Println("soma de somente pares: ", t)
@@ -219,7 +221,7 @@ func i() func() int {
 	}
 }
 
-// clousure  = escopos?
+// clousure  = escopos? video 96
 func exemplo10() {
 	a := i()
 	fmt.Println(a())
@@ -247,7 +249,7 @@ func loops(x int) int {
 	return total
 }
 
-// recursividade
+// recursividade video 97
 func exemplo11() {
 	fmt.Println(fatorial(100))
 
